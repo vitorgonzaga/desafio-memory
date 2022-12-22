@@ -1,6 +1,6 @@
 # Teste para Avaliação de Conhecimento
 
-## Desenvolvedor de Software 
+### Desenvolvedor de Software 
 
 Para avaliar as habilidades do candidato à vaga de desenvolvedor de software será necessário que o mesmo implemente um mini projeto para **Gerenciamento de Medicamentos** com:
 
@@ -32,7 +32,6 @@ Como a principal característica do cargo a ser ocupado é atuar como dev em equ
 - **Sistema escalonável**. Seu projeto deve ser codificado de forma a permitir alterações e adições de novas *features*.
 
 > ATENÇÃO! 
-
 Será considerado um diferencial o desenvolvimento de testes unitários para as principais funcionalidades. Prefira testes objetivos e assertivos aos complexos e extensos. Além disso, a configuração do Swagger para acesso e documentação de API também será considerada um diferencial. 
 
 Caso o candidato não consiga entregar todos os requisitos, é importante descrever no README do projeto o que foi entregue, os critérios de priorização e se houveram impedimentos.
@@ -47,10 +46,12 @@ Para tanto, sugerimos o Camtasia® ou o oCAM como softwares para gravação do v
 
 Ao finalizar os trabalhos, o BANCO DE DADOS e o VÍDEO deverão ser compactados e postados no [WeTransfer](https://www.wetransfer.com/) enviando o link para download para a [Memory](rh@memory.com.br). Caso o projeto seja aceito, o candidato será convidado a apresentá-lo nas dependências da empresa.
 
->IMPORTANTE 
+>IMPORTANTE: 
 O vídeo com áudio é parte imprescindível da entrega. Caso o candidato envie somente o código-fonte e banco de dados, a prova nem será avaliada. 
 
-> DICA 
+> DICA: 
 Use esse texto como um checklist! Principalmente os itens marcados com  uma vez que a correção e sua pontuação serão baseadas exatamente na execução dos itens obrigatórios. Atenção também com o **tempo do vídeo, data de entrega** e aos **detalhes do enunciado** assim como um desenvolvedor tem que ter com as entregas de um projeto e detalhes de especificação. 
+
+
 
 **Sucesso no teste!**
