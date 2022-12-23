@@ -1,15 +1,12 @@
 # Teste para Avaliação de Conhecimento
 
-
-
 ### Desenvolvedor de Software 
+---
 
 Para avaliar as habilidades do candidato à vaga de desenvolvedor de software será necessário que o mesmo implemente um mini projeto para **Gerenciamento de Medicamentos** com:
 
 - Serviços que permitam incluir, remover e alterar as **REAÇÕES ADVERSAS** possíveis em medicamentos. Campos: id, descrição. 
-
 - Serviços que permitam incluir, remover e alterar **MEDICAMENTOS**. Campos: 
-
     - número de registro da Anvisa (com máscara padrão 0.0000.0000.000-0);
     - nome do medicamento;
     - data de validade (com máscara padrão dd/mm/aaaa);
@@ -18,7 +15,6 @@ Para avaliar as habilidades do candidato à vaga de desenvolvedor de software se
     - quantidade de comprimidos;
     - fabricante (atenção à relação com **FABRICANTE**, pois neste caso **um** medicamento deve ser cadastrado com **um** único fabricante. Não é texto livre, é selecionável. A lista de fabricantes deve ser previamente cadastrada no banco);
     - reações adversas (atenção à relação com **REAÇÕES ADVERSAS**, pois **um** medicamento pode ter **uma ou várias** reações adversas previstas na sua bula.)
-
 - Um serviço que permita pesquisa de medicamento pelo nome ou pelo seu número de registro.
 
 
@@ -61,4 +57,4 @@ Use esse texto como um checklist! Principalmente os itens marcados com  uma v
 
 
 
-**Sucesso no teste!**
+**Sucesso no teste!** :smile:
