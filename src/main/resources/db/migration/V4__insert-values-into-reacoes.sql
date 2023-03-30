@@ -1,0 +1,15 @@
+insert into reacoes (descricao) values ("erupção cutânea");
+insert into reacoes (descricao) values ("lesão renal");
+insert into reacoes (descricao) values ("anemia");
+insert into reacoes (descricao) values ("náusea");
+insert into reacoes (descricao) values ("constipação");
+insert into reacoes (descricao) values ("vômito");
+insert into reacoes (descricao) values ("diarréia");
+insert into reacoes (descricao) values ("prisão de ventre");
+insert into reacoes (descricao) values ("fadiga");
+insert into reacoes (descricao) values ("dores musculares");
+insert into reacoes (descricao) values ("mal-estar");
+insert into reacoes (descricao) values ("distúrbios visuais");
+insert into reacoes (descricao) values ("tremor muscular");
+insert into reacoes (descricao) values ("dificuldade na micção");
+insert into reacoes (descricao) values ("mudança de humor");
