@@ -54,4 +54,25 @@ public class MedicamentoService {
         return new DadosDetalhamentoMedicamento(medicamento);
 
     }
+
+    public Medicamento atualizar(DadosAtualizacaoMedicamento dados) {
+            Medicamento medicamento = medicamentoRepository.getReferenceById(dados.id());
+
+            Fabricante fabricante = null;
+
+            if(dados.fabricanteId() != null) {
+                fabricante = fabricanteRepository.getReferenceById(dados.fabricanteId());
+            }
+
+            List<Reacao> reacoes = null;
+
+            if(dados.reacoes() != null) {
+                validadorReacoesCadastradas.validar(dados);
+                 reacoes = validadorReacoesCadastradas.getReacoes();
+            }
+
+            medicamento.atualizarInformacoes(dados, fabricante, reacoes);
+
+            return medicamento;
+    }
 }
