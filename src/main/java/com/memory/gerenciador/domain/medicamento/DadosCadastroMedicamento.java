@@ -21,6 +21,7 @@ public record DadosCadastroMedicamento(
         LocalDate dataValidade,
 
         @NotBlank
+        @Pattern(regexp = "\\(\\d{2}\\)\\d{4}\\-\\d{4}")
         String telefone,
 
         @DecimalMin(value = "0.0", inclusive = false)
