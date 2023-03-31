@@ -1,7 +1,6 @@
 package com.memory.gerenciador.domain.medicamento;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.memory.gerenciador.domain.reacao.Reacao;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
@@ -31,7 +30,11 @@ public record DadosCadastroMedicamento(
         @Min(value = 1)
         Integer quantidadeComprimidos,
 
-        List<Reacao> reacoes
+        @NotNull
+        Long fabricanteId,
+
+        List<Long> reacoes
+
 ) {
 
 }
