@@ -1,5 +1,6 @@
 package com.memory.gerenciador.domain.fabricante;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.memory.gerenciador.domain.medicamento.Medicamento;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,8 @@ public class Fabricante {
     private Long id;
 
     private String nome;
+
+    private String cnpj;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<Medicamento> medicamentos;
