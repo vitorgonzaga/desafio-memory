@@ -17,18 +17,14 @@ import java.net.URI;
 @RequestMapping("medicamentos")
 public class MedicamentoController {
 
-    // @Autowired
-    // private MedicamentoRepository repository;
-
     @Autowired
     private MedicamentoService medicamentoService;
 
     @PostMapping
     @Transactional
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedicamento dados, UriComponentsBuilder uriComponentsBuilder) {
-        // Medicamento medicamento = new Medicamento(dados);
-        // repository.save(medicamento);
         DadosDetalhamentoMedicamento dto = medicamentoService.cadastrar(dados);
+        // boa prática disponibilizar uma url com o detalhamento (vai no headers). Pendente de implementação.
         URI uri = uriComponentsBuilder.path("/medicamento/{id}").buildAndExpand(dto.id()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
