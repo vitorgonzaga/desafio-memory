@@ -49,15 +49,4 @@ public class Medicamento {
     )
     private List<Reacao> reacoes;
 
-
-//    public Medicamento(DadosCadastroMedicamento dados) {
-//        this.registroAnvisa = dados.registroAnvisa();
-//        this.nome = dados.nome();
-//        this.dataValidade = dados.dataValidade();
-//        this.telefone = dados.telefone();
-//        this.preco = dados.preco();
-//        this.quantidadeComprimidos = dados.quantidadeComprimidos();
-//        this.fabricante = dados.fabricanteId();
-//        this.reacoes = dados.reacoes();
-//    }
 }
