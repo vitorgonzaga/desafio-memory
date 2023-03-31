@@ -1,5 +1,6 @@
 package com.memory.gerenciador.domain.medicamento;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.memory.gerenciador.domain.fabricante.Fabricante;
 import com.memory.gerenciador.domain.reacao.Reacao;
 import jakarta.persistence.*;
@@ -18,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Medicamento {
 
     @Id
@@ -29,11 +31,11 @@ public class Medicamento {
     private String telefone;
     private BigDecimal preco;
     private Integer quantidadeComprimidos;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "fabricante_id")
     private Fabricante fabricante;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     @JoinTable(
             name = "medicamentos_reacoes",
             joinColumns = @JoinColumn(
@@ -48,13 +50,14 @@ public class Medicamento {
     private List<Reacao> reacoes;
 
 
-    public Medicamento(DadosCadastroMedicamento dados) {
-        this.registroAnvisa = dados.registroAnvisa();
-        this.nome = dados.nome();
-        this.dataValidade = dados.dataValidade();
-        this.telefone = dados.telefone();
-        this.preco = dados.preco();
-        this.quantidadeComprimidos = dados.quantidadeComprimidos();
-        this.reacoes = dados.reacoes();
-    }
+//    public Medicamento(DadosCadastroMedicamento dados) {
+//        this.registroAnvisa = dados.registroAnvisa();
+//        this.nome = dados.nome();
+//        this.dataValidade = dados.dataValidade();
+//        this.telefone = dados.telefone();
+//        this.preco = dados.preco();
+//        this.quantidadeComprimidos = dados.quantidadeComprimidos();
+//        this.fabricante = dados.fabricanteId();
+//        this.reacoes = dados.reacoes();
+//    }
 }
