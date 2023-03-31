@@ -2,16 +2,14 @@ package com.memory.gerenciador.domain.reacao;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Table(name = "reacoes")
 @Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @EqualsAndHashCode(of = "id")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Reacao {
