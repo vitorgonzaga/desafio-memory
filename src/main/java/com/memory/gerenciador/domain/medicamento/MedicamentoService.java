@@ -2,6 +2,8 @@ package com.memory.gerenciador.domain.medicamento;
 
 import com.memory.gerenciador.domain.fabricante.Fabricante;
 import com.memory.gerenciador.domain.fabricante.FabricanteRepository;
+import com.memory.gerenciador.domain.medicamento.validacoes.ValidadorCadastramentoMedicamento;
+import com.memory.gerenciador.domain.medicamento.validacoes.ValidadorReacoesCadastradas;
 import com.memory.gerenciador.domain.reacao.Reacao;
 import com.memory.gerenciador.domain.reacao.ReacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +24,15 @@ public class MedicamentoService {
     @Autowired
     private ReacaoRepository reacaoRepository;
 
+    @Autowired
+    private ValidadorReacoesCadastradas validadorReacoesCadastradas;
+
+    @Autowired
+    private List<ValidadorCadastramentoMedicamento> validadores;
+
     public DadosDetalhamentoMedicamento cadastrar(DadosCadastroMedicamento dados) {
-        if(!fabricanteRepository.existsById(dados.fabricanteId())) {
-            throw new RuntimeException("Id do fabricante informado não existe!");
-        }
 
-        List<Reacao> reacoes = new ArrayList<>();
-
-        dados.reacoes().forEach(reacaoId -> {
-            if (!reacaoRepository.existsById(reacaoId)) {
-                throw new RuntimeException("A reacão de id: " + reacaoId + " informado na requisição não existe!");
-            } else {
-                Reacao reacao = reacaoRepository.getReferenceById(reacaoId);
-                reacoes.add(reacao);
-            }
-        });
+        validadores.forEach(validador -> validador.validar(dados));
 
         Fabricante fabricante = fabricanteRepository.getReferenceById(dados.fabricanteId());
 
@@ -49,7 +45,7 @@ public class MedicamentoService {
                 dados.preco(),
                 dados.quantidadeComprimidos(),
                 fabricante,
-                reacoes
+                validadorReacoesCadastradas.getReacoes()
         );
 
         medicamentoRepository.save(medicamento);
