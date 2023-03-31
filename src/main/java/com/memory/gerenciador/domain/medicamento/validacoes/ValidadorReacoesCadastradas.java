@@ -1,5 +1,6 @@
 package com.memory.gerenciador.domain.medicamento.validacoes;
 
+import com.memory.gerenciador.domain.medicamento.DadosAtualizacaoMedicamento;
 import com.memory.gerenciador.domain.medicamento.DadosCadastroMedicamento;
 import com.memory.gerenciador.domain.reacao.Reacao;
 import com.memory.gerenciador.domain.reacao.ReacaoRepository;
@@ -19,10 +20,19 @@ public class ValidadorReacoesCadastradas implements ValidadorCadastramentoMedica
     @Autowired
     private ReacaoRepository reacaoRepository;
 
-    @Override
-    public void validar(DadosCadastroMedicamento dados) {
 
-        dados.reacoes().forEach(reacaoId -> {
+    public void validar(DadosCadastroMedicamento dados) {
+        iniciaIteracao(dados.reacoes());
+    }
+
+    public void validar(DadosAtualizacaoMedicamento dados) {
+        iniciaIteracao(dados.reacoes());
+    }
+
+
+    private void iniciaIteracao(List<Long> listaIdReacoes) {
+        this.reacoes = new ArrayList<>();
+        listaIdReacoes.forEach(reacaoId -> {
             if (!reacaoRepository.existsById(reacaoId)) {
                 throw new RuntimeException("A reacão de id: " + reacaoId + " informado na requisição não existe!");
             } else {
@@ -30,6 +40,5 @@ public class ValidadorReacoesCadastradas implements ValidadorCadastramentoMedica
                 reacoes.add(reacao);
             }
         });
-
     }
 }
