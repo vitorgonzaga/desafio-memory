@@ -29,7 +29,7 @@ public class MedicamentoController {
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedicamento dados, UriComponentsBuilder uriComponentsBuilder) {
         DadosDetalhamentoMedicamento dto = medicamentoService.cadastrar(dados);
         // boa prática disponibilizar uma url com o detalhamento (vai no headers). Pendente de implementação.
-        URI uri = uriComponentsBuilder.path("/medicamento/{id}").buildAndExpand(dto.id()).toUri();
+        URI uri = uriComponentsBuilder.path("/medicamentos/{id}").buildAndExpand(dto.id()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
 
