@@ -93,5 +93,12 @@ Desenvolvi as entidades JPA e os relacionamento com base na estrutura abaixo:
 
 ![estrutura-banco-de-dados](src/main/resources/static/Estrutura-banco-de-dados.png)
 
+## Swagger
 
+> http://localhost:8080/swagger-ui/index.html
+ 
+![imagem-swagger](src/main/resources/static/imagem-swagger.png)
 
+## Testes
+
+![imagem-testes](src/main/resources/static/imagem-testes.png)
