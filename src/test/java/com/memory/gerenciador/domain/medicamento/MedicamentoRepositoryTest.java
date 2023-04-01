@@ -39,7 +39,7 @@ class MedicamentoRepositoryTest {
     private TestEntityManager em;
 
     @Test
-    @DisplayName("Dado os registros contidos no banco de dados de teste, deve retornar 1 registro")
+    @DisplayName("Dado o registro realizado no banco de dados de teste e a string 'Teste' utilizada como parametro, deve retornar o MedicamentoTeste")
     /*
      * Por se tratar de um método criado automaticamente pelo SpringData não identifico necessidade de criar um teste,
      * mas fiz com a intenção de exercitar.
