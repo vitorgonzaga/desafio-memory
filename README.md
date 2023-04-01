@@ -64,6 +64,7 @@ Use esse texto como um checklist! Principalmente os itens marcados com  uma v
 # Resolução
 
 ---
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitorgonzaga/)
 
 Desenvolvi o desafio utilizando um container docker com uma imagem MYSQL, pois é um banco que eu possuo mais familiaridade.
 
