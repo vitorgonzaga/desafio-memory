@@ -23,12 +23,19 @@ public class Medicamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String registroAnvisa;
+
     private String nome;
+
     private LocalDate dataValidade;
+
     private String telefone;
+
     private BigDecimal preco;
+
     private Integer quantidadeComprimidos;
+
     @ManyToOne
     @JoinColumn(name = "fabricante_id")
     private Fabricante fabricante;
