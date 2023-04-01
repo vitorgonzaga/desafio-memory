@@ -58,3 +58,40 @@ Use esse texto como um checklist! Principalmente os itens marcados com  uma v
 
 
 **Sucesso no teste!** :smile:
+
+---
+
+# Resolução
+
+---
+
+Desenvolvi o desafio utilizando um container docker com uma imagem MYSQL, pois é um banco que eu possuo mais familiaridade.
+
+Command line para subir o container:
+```
+docker run --name <nome-de-preferencia> -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=<senha-de-preferencia> -d -p 3306:3306 mysql:tag
+```
+
+Ao executar o comando acima, caso a imagem não exista localmente, o docker irá baixar automaticamente.
+
+Comando para consultar o container ativo:
+
+```
+docker container ls -a
+```
+
+Para executar um terminal interativo dentro do container e realizar consultas:
+
+```
+docker exec -it <nome-do-container> bash
+```
+ 
+
+## Estrutura do banco de dados:
+
+Desenvolvi as entidades JPA e os relacionamento com base na estrutura abaixo:
+
+![estrutura-banco-de-dados](src/main/resources/static/Estrutura-banco-de-dados.png)
+
+
+
