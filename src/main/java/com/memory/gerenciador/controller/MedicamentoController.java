@@ -53,5 +53,11 @@ public class MedicamentoController {
         return ResponseEntity.ok(dtos);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id) {
+        Medicamento medicamento = medicamentoRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoMedicamento(medicamento));
+    }
+
 
 }
