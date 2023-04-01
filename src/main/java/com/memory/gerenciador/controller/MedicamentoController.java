@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("medicamentos")
@@ -43,6 +44,13 @@ public class MedicamentoController {
     public ResponseEntity<Page<DadosDetalhamentoMedicamento>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         Page<DadosDetalhamentoMedicamento> page = medicamentoRepository.findAll(paginacao).map(DadosDetalhamentoMedicamento::new);
         return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/pesquisa")
+    public ResponseEntity<List<DadosDetalhamentoMedicamento>> listarPorNome(@RequestParam String nome) {
+        List<Medicamento> listaMedicamentosPorNome = medicamentoRepository.findByNomeLike("%" + nome + "%");
+        List<DadosDetalhamentoMedicamento> dtos = listaMedicamentosPorNome.stream().map(DadosDetalhamentoMedicamento::new).toList();
+        return ResponseEntity.ok(dtos);
     }
 
 
