@@ -24,6 +24,7 @@ public record DadosCadastroMedicamento(
         @Pattern(regexp = "\\(\\d{2}\\)\\d{4}\\-\\d{4}")
         String telefone,
 
+        @NotNull
         @DecimalMin(value = "0.0", inclusive = false)
         @Digits(integer = 8, fraction = 2)
         BigDecimal preco,
