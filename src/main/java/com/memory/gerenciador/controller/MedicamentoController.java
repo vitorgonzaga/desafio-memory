@@ -59,5 +59,11 @@ public class MedicamentoController {
         return ResponseEntity.ok(new DadosDetalhamentoMedicamento(medicamento));
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity excluir(@PathVariable Long id) {
+        medicamentoRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }
