@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -54,7 +53,7 @@ class MedicamentoRepositoryTest {
         List<Medicamento> resultado = medicamentoRepository.findByNomeLike("%Teste%");
 
         // Then or assert
-        assertThat(resultado.get(0), equalTo(medicamento));
+        assertEquals(resultado.get(0), medicamento);
     }
 
     private Medicamento cadastrarMedicamento(String nome, String registroAnvisa, Long fabricanteId, List<Long> reacoesId) {
