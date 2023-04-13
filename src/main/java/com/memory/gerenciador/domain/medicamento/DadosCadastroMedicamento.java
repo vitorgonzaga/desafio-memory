@@ -35,6 +35,7 @@ public record DadosCadastroMedicamento(
         @NotNull
         Long fabricanteId,
 
+        @NotNull
         List<Long> reacoes
 
 ) {
